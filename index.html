@@ -2,92 +2,114 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title> تبریک </title>
+  <title>تبریک </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <style>
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
-      font-family: "Vazirmatn", sans-serif;
-      background: linear-gradient(135deg, #fdfbfb, #ebedee);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      font-family: 'Vazirmatn', sans-serif;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffe6f0, #f0f7ff);
       overflow-x: hidden;
-      text-align: center;
       position: relative;
+      text-align: center;
+      padding: 20px;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.95);
-      padding: 30px 20px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      animation: fadeIn 1.5s ease;
-      width: 90%;
+      background: rgba(255,255,255,0.95);
+      border-radius: 25px;
+      padding: 40px 25px;
       max-width: 650px;
+      width: 90%;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease forwards;
+      position: relative;
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       color: #222;
       margin-bottom: 15px;
+      opacity: 0;
+      animation: textFade 1.5s forwards 0.5s;
     }
 
     p {
       font-size: 1.2rem;
       color: #444;
       line-height: 1.8;
+      opacity: 0;
+      animation: textFade 1.5s forwards 1s;
     }
 
     .hint {
       font-size: 0.9rem;
-      color: #777;
+      color:#777;
+      margin-top: 20px;
+      opacity: 0;
+      animation: textFade 1.5s forwards 1.5s;
+    }
+
+    .btn-celebrate {
+      margin-top: 20px;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg,#ff6ec4,#7873f5);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+      opacity: 0;
+      animation: textFade 1.5s forwards 2s;
+    }
+
+    .btn-celebrate:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    .credit {
+      font-size: 0.7rem;
+      color: #999;
       margin-top: 15px;
     }
 
     footer {
       font-size: 0.8rem;
       color: #555;
-      text-align: center;
-      margin-top: 15px;
-    }
-
-    .credit {
-      font-size: 0.7rem;
-      color: #999;
-      margin-top: 5px;
+      margin-top: 10px;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9);}
-      to { opacity: 1; transform: scale(1);}
+      from { transform: scale(0.9); opacity: 0;}
+      to { transform: scale(1); opacity: 1;}
     }
 
-    /* واکنش‌گرایی موبایل */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.5rem;
-      }
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-      }
-      .hint {
-        font-size: 0.8rem;
-      }
-      footer {
-        font-size: 0.7rem;
-      }
-      .credit {
-        font-size: 0.6rem;
-      }
+    @keyframes textFade {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* موبایل */
+    @media(max-width:480px){
+      h1 { font-size: 1.6rem; }
+      p { font-size: 1rem; line-height:1.5; }
+      .btn-celebrate { font-size:0.9rem; padding:10px 20px; }
+      .credit { font-size:0.6rem; }
+      footer { font-size:0.7rem; }
+      .container { padding:25px 15px; border-radius:20px; }
     }
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1>🎊 تبریک میگم مهسا خانوم 🎊</h1>
     <p>
@@ -97,36 +119,26 @@
       این موفقیت فقط آغاز مسیر پر از افتخارهای بزرگ‌تر خواهد بود. 💐<br>
       بی‌شک ما منتظر موفقیت‌های بعدی تو خواهیم ماند.
     </p>
-    <p class="hint">(برای جشن دوباره، روی صفحه کلیک کنید 🎉)</p>
+    <button class="btn-celebrate">🎉 دوباره جشن بگیر!</button>
     <div class="credit">Made with ❤️ by GoldenJDM</div>
-    <footer>
-      © 2025 — تمامی حقوق این وبسایت محفوظ است. استفاده از مطالب فقط با ذکر منبع مجاز است.
-    </footer>
+    <footer>© 2025 — تمامی حقوق این وبسایت محفوظ است.</footer>
   </div>
 
   <!-- اسکریپت کاغذ رنگی -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
-    function shootCornerConfetti() {
-      confetti({
-        particleCount: 80,
-        angle: 60,
-        spread: 70,
-        origin: { x: 0, y: 1 }
-      });
-      confetti({
-        particleCount: 80,
-        angle: 120,
-        spread: 70,
-        origin: { x: 1, y: 1 }
-      });
+    function shootConfetti() {
+      const width = window.innerWidth;
+      const particleCount = width < 480 ? 40 : 100; // موبایل کمتر
+      confetti({ particleCount, spread: 70, origin: { x: 0, y: 1 }});
+      confetti({ particleCount, spread: 70, origin: { x: 1, y: 1 }});
     }
 
     // شلیک اولیه
-    shootCornerConfetti();
+    shootConfetti();
 
-    // کلیک روی صفحه = دوباره جشن
-    document.body.addEventListener("click", shootCornerConfetti);
+    // دکمه دوباره جشن
+    document.querySelector('.btn-celebrate').addEventListener('click', shootConfetti);
   </script>
 </body>
 </html>
