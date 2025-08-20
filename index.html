@@ -2,12 +2,12 @@
 <html lang="fa">
 <head>
   <meta charset="UTF-8" />
-  <title>تبریک 🎉 | هنرستان نمونه دولتی</title>
+  <title>تبریک ویژه 🎉 | مهسا خانوم</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: "Vazirmatn", sans-serif;
-      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
       margin: 0;
       padding: 0;
       display: flex;
@@ -18,48 +18,71 @@
       text-align: center;
     }
     .container {
-      background: rgba(255,255,255,0.85);
-      padding: 40px;
+      background: rgba(255,255,255,0.9);
+      padding: 50px 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
       animation: fadeIn 1.5s ease;
+      max-width: 600px;
     }
     h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 10px;
+      font-size: 2.2rem;
+      color: #222;
+      margin-bottom: 15px;
     }
     p {
       font-size: 1.2rem;
-      color: #555;
+      color: #444;
+      line-height: 1.8;
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9);}
       to { opacity: 1; transform: scale(1);}
     }
+    .hint {
+      font-size: 0.9rem; 
+      color:#777; 
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🎉 تبریک می‌گم مهسا خانوم ! 🎉</h1>
-    <p>قبولی‌ات در <strong>هنرستان نمونه دولتی</strong> رو از صمیم قلب شادباش میگم 🌟</p>
-    <p>این فقط آغاز یه مسیر درخشان برای آینده‌ته ✨</p>
+    <h1>🎊 تبریک ویژه به مهسا خانوم 🎊</h1>
+    <p>
+      مهسا خانوم عزیز،<br>
+      قبولی شما در <strong>هنرستان نمونه دولتی</strong> رو از صمیم قلب تبریک میگم. 🌟<br>
+      تلاش و پشتکار شما الهام‌بخشه و مطمئنم آینده‌ای درخشان در انتظارتونه. ✨<br>
+      این موفقیت فقط آغاز مسیر پر از افتخارهای بزرگ‌تر خواهد بود. 💐
+    </p>
+    <p class="hint">(برای جشن دوباره، روی صفحه کلیک کنید 🎉)</p>
   </div>
 
   <!-- اسکریپت کاغذ رنگی -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
-    function shootConfetti() {
+    function shootCornerConfetti() {
+      // گوشه پایین سمت چپ
       confetti({
-        particleCount: 120,
+        particleCount: 80,
+        angle: 60,
         spread: 70,
-        origin: { y: 0.6 }
+        origin: { x: 0, y: 1 }
+      });
+      // گوشه پایین سمت راست
+      confetti({
+        particleCount: 80,
+        angle: 120,
+        spread: 70,
+        origin: { x: 1, y: 1 }
       });
     }
+
     // شلیک اولیه
-    shootConfetti();
-    // شلیک‌های دوره‌ای برای جذابیت بیشتر
-    setInterval(shootConfetti, 3000);
+    shootCornerConfetti();
+
+    // کلیک روی صفحه = دوباره جشن
+    document.body.addEventListener("click", shootCornerConfetti);
   </script>
 </body>
 </html>
