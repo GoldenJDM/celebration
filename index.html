@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>تبریک 🎉 | هنرستان نمونه دولتی</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    body {
+      font-family: "Vazirmatn", sans-serif;
+      background: linear-gradient(135deg, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+      text-align: center;
+    }
+    .container {
+      background: rgba(255,255,255,0.85);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 1.5s ease;
+    }
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9);}
+      to { opacity: 1; transform: scale(1);}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎉 تبریک می‌گم مهسا خانوم ! 🎉</h1>
+    <p>قبولی‌ات در <strong>هنرستان نمونه دولتی</strong> رو از صمیم قلب شادباش میگم 🌟</p>
+    <p>این فقط آغاز یه مسیر درخشان برای آینده‌ته ✨</p>
+  </div>
+
+  <!-- اسکریپت کاغذ رنگی -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script>
+    function shootConfetti() {
+      confetti({
+        particleCount: 120,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
+    }
+    // شلیک اولیه
+    shootConfetti();
+    // شلیک‌های دوره‌ای برای جذابیت بیشتر
+    setInterval(shootConfetti, 3000);
+  </script>
+</body>
+</html>
