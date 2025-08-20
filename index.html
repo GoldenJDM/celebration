@@ -14,51 +14,76 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
       text-align: center;
       position: relative;
     }
+
     .container {
-      background: rgba(255,255,255,0.9);
-      padding: 40px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px 20px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       animation: fadeIn 1.5s ease;
+      width: 90%;
       max-width: 650px;
     }
+
     h1 {
       font-size: 2rem;
       color: #222;
       margin-bottom: 15px;
     }
+
     p {
       font-size: 1.2rem;
       color: #444;
       line-height: 1.8;
     }
+
+    .hint {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 15px;
+    }
+
+    footer {
+      font-size: 0.8rem;
+      color: #555;
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .credit {
+      font-size: 0.7rem;
+      color: #999;
+      margin-top: 5px;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9);}
       to { opacity: 1; transform: scale(1);}
     }
-    .hint {
-      font-size: 0.9rem; 
-      color:#777; 
-      margin-top: 15px;
-    }
-    footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 0.8rem;
-      color: #555;
-      text-align: center;
-    }
-    .credit {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      font-size: 0.7rem;
-      color: #999;
+
+    /* واکنش‌گرایی موبایل */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      .hint {
+        font-size: 0.8rem;
+      }
+      footer {
+        font-size: 0.7rem;
+      }
+      .credit {
+        font-size: 0.6rem;
+      }
     }
   </style>
 </head>
@@ -73,28 +98,22 @@
       بی‌شک ما منتظر موفقیت‌های بعدی تو خواهیم ماند.
     </p>
     <p class="hint">(برای جشن دوباره، روی صفحه کلیک کنید 🎉)</p>
+    <div class="credit">Made with ❤️ by GoldenJDM</div>
+    <footer>
+      © 2025 — تمامی حقوق این وبسایت محفوظ است. استفاده از مطالب فقط با ذکر منبع مجاز است.
+    </footer>
   </div>
-
-  <!-- نوشته کوچک انگلیسی گوشه پایین -->
-  <div class="credit">Made with ❤️ by GoldenJDM</div>
-
-  <!-- فوتر حقوقی -->
-  <footer>
-    © 2025 — تمامی حقوق این وبسایت محفوظ است. استفاده از مطالب فقط با ذکر منبع مجاز است.
-  </footer>
 
   <!-- اسکریپت کاغذ رنگی -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
   <script>
     function shootCornerConfetti() {
-      // گوشه پایین سمت چپ
       confetti({
         particleCount: 80,
         angle: 60,
         spread: 70,
         origin: { x: 0, y: 1 }
       });
-      // گوشه پایین سمت راست
       confetti({
         particleCount: 80,
         angle: 120,
